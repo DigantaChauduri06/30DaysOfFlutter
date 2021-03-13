@@ -13,10 +13,8 @@ class HomePage extends StatelessWidget {
         title: Text('AppBar'),
       ),
       body: Material(
-        child: SafeArea(
-          child: Center(
-            child: Text('$fullData'),
-          ),
+        child: Center(
+          child: Text('$fullData'),
         ),
       ),
       drawer: Drawer(),
