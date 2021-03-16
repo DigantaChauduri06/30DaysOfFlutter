@@ -1,3 +1,4 @@
+import 'package:day1first/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,9 +13,9 @@ class _LoginPageState extends State<LoginPage> {
       theme: ThemeData.light(),
       home: SafeArea(
         child: Scaffold(
-          body: SingleChildScrollView(
-            child: Material(
-              color: Colors.white,
+          body: Material(
+            color: Colors.white,
+            child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
                   Image.asset(
@@ -63,10 +64,12 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            print('Printed');
+                            Navigator.pushNamed(context, MyRoutes.homeRoute);
                           },
                           child: Text('Login'),
-                          style: TextButton.styleFrom(),
+                          style: TextButton.styleFrom(
+                            minimumSize: Size(130, 45),
+                          ),
                         )
                       ],
                     ),
