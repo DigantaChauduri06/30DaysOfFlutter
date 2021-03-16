@@ -1,4 +1,4 @@
-# day1first
+# 30 Days of Flutter
 
 A new Flutter project.
 
