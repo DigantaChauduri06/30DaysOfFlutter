@@ -2,6 +2,7 @@ import 'package:day1first/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'Pages/homePage.dart';
 import 'Pages/loginPage.dart';
+import 'pages/registerPage.dart';
 
 void main() {
   runApp(
@@ -25,17 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage()
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.registerRoute: (context) => RagisterPage()
       },
     );
   }
 }
-//////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////
-    // bringop(paisa: 700, plactic: true); //Function call
-  // bringop({paisa = 100, @required bool plactic}) {
-     //default parameter if we write @requied then we must write that argument
-  //   print('paisa is $paisa and $plactic');
-  // }
-  //theme: ThemeData.dark(), //This is for Dark theme
-  // themeMode: ThemeMode.dark,

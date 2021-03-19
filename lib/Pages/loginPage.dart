@@ -6,6 +6,8 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
+String name = "";
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 24,
                   ),
                   Text(
-                    'Welcome To My App',
+                    'Welcome $name',
                     style: TextStyle(
                       color: Colors.black87,
                       fontSize: 24,
@@ -47,6 +49,10 @@ class _LoginPageState extends State<LoginPage> {
                             hintText: "Enter Your Name",
                             labelText: "UserName",
                           ),
+                          onChanged: (value) {
+                            name = value;
+                            setState(() {});
+                          },
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -69,6 +75,25 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text('Login'),
                           style: TextButton.styleFrom(
                             minimumSize: Size(130, 45),
+                            backgroundColor: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          child: Text("Haven't an account Make One"),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, MyRoutes.registerRoute);
+                          },
+                          style: TextButton.styleFrom(
+                              backgroundColor: Colors.white, elevation: 0),
+                          child: Text(
+                            'Register Now',
+                            style: TextStyle(color: Colors.green[600]),
                           ),
                         )
                       ],
@@ -83,7 +108,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-/**
- * singleChlidScrollView help to fix overflow due to keyboard
- * 
- */
